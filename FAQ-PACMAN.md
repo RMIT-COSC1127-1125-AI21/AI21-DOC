@@ -9,55 +9,55 @@ As any FAQ page, this page is always "under construction". As we realize that so
 Table of Contents
 =================
 
-   * [GENERAL](#general)
-      * [In a code assignment/project, how do I make sure I do not go against academic integrity?](#in-a-code-assignmentproject-how-do-i-make-sure-i-do-not-go-against-academic-integrity)
-      * [Cannot access the Google Form, says I need permission](#cannot-access-the-google-form-says-i-need-permission)
-      * [How do I submit my project solution in my GIT repository?](#how-do-i-submit-my-project-solution-in-my-git-repository)
-      * [How do I change the submission tag if I have already tagged one commit for submission?](#how-do-i-change-the-submission-tag-if-i-have-already-tagged-one-commit-for-submission)
-      * [I submitted wrongly (e.g., didn't tag correctly) and is now after the due date, can you consider my submission?](#i-submitted-wrongly-eg-didnt-tag-correctly-and-is-now-after-the-due-date-can-you-consider-my-submission)
-      * [Project specification says "You should code your implantation only at the locations ...." . Does this mean that we can't create our custom classes outside the provided functions?](#project-specification-says-you-should-code-your-implantation-only-at-the-locations---does-this-mean-that-we-cant-create-our-custom-classes-outside-the-provided-functions)
-      * [How do I zip files in folder X without including the folder X itself?](#how-do-i-zip-files-in-folder-x-without-including-the-folder-x-itself)
-   * [PACMAN SETUP](#pacman-setup)
-      * [What is the best way to develop my solutions for the Pacman project?](#what-is-the-best-way-to-develop-my-solutions-for-the-pacman-project)
-      * [What version of Python should I use?](#what-version-of-python-should-i-use)
-      * [How do I run Python 3.6 in coreteaching?](#how-do-i-run-python-36-in-coreteaching)
-      * [How to run Pacman remotely from coreteaching?](#how-to-run-pacman-remotely-from-coreteaching)
-      * [Coreteaching? What is that?](#coreteaching-what-is-that)
-      * [How do I setup a system in Windows with Python 3.6?](#how-do-i-setup-a-system-in-windows-with-python-36)
-   * [TROUBLESHOOTING](#troubleshooting)
-      * [Can I use problem._visited?](#can-i-use-problem_visited)
-      * [I get "_tkinter.TclError: no display name and no $DISPLAY environment variable" error when running in WSL or ssh](#i-get-_tkintertclerror-no-display-name-and-no-display-environment-variable-error-when-running-in-wsl-or-ssh)
-      * [Cannot run Pacman due to problems with Tkinter: "ImportError: No module named Tkinter"](#cannot-run-pacman-due-to-problems-with-tkinter-importerror-no-module-named-tkinter)
-      * [How do I know the type of a variable in Python?](#how-do-i-know-the-type-of-a-variable-in-python)
-      * [Error module 'cgi' has no attribute 'escape' when running autograder.pt](#error-module-cgi-has-no-attribute-escape-when-running-autograderpt)
-      * [Cannot compile Metric-FF in MacOS](#cannot-compile-metric-ff-in-macos)
-   * [Project 1](#project-1)
-      * [What actions should I return in the search algorithms?](#what-actions-should-i-return-in-the-search-algorithms)
-      * [I am getting too many expansions. What counts as an expansion?](#i-am-getting-too-many-expansions-what-counts-as-an-expansion)
-   * [Project 2](#project-2)
-      * [Inconsistent depth in minimax project 2, Q2 and careful use of __init__](#inconsistent-depth-in-minimax-project-2-q2-and-careful-use-of-__init__)
-      * [Can we apply a "magic number" such as -9999 in our evaluation functions, as part of our logic not simply an arbitrary "return -9999"?](#can-we-apply-a-magic-number-such-as--9999-in-our-evaluation-functions-as-part-of-our-logic-not-simply-an-arbitrary-return--9999)
-   * [Capture the Flag](#capture-the-flag)
-      * [How to load my additional files beyond myTeam.py?](#how-to-load-my-additional-files-beyond-myteampy)
-      * [Games go too fast! What should I do?](#games-go-too-fast-what-should-i-do)
-      * [How do I replay a game?](#how-do-i-replay-a-game)
-      * [How does one check if a given agent is currently scared? Is the only option to check the number of capsules in previous states?](#how-does-one-check-if-a-given-agent-is-currently-scared-is-the-only-option-to-check-the-number-of-capsules-in-previous-states)
-      * [It looks like the distance calculator is performing calculations in the background of our turns, can we replace it with our own version that does more?](#it-looks-like-the-distance-calculator-is-performing-calculations-in-the-background-of-our-turns-can-we-replace-it-with-our-own-version-that-does-more)
-      * [Can we re-use code from Project 2?](#can-we-re-use-code-from-project-2)
-      * [Ugly rendering of graphics under MacOs?](#ugly-rendering-of-graphics-under-macos)
-      * [How to call a planner like (like ff) or any another external tool?](#how-to-call-a-planner-like-like-ff-or-any-another-external-tool)
-      * [What does it mean that we must use 2/3 AI techniques? Do they all need to be part of the final submission?](#what-does-it-mean-that-we-must-use-23-ai-techniques-do-they-all-need-to-be-part-of-the-final-submission)
-      * [Can I use library or program X (e.g., tensorflow, FF planner, etc.)?](#can-i-use-library-or-program-x-eg-tensorflow-ff-planner-etc)
-      * [I have performance problem with generateSuccessor in my search implementation, why?](#i-have-performance-problem-with-generatesuccessor-in-my-search-implementation-why)
-      * [I want to update an enemy position that's not in my sight range. I need to assign the position information in a copy of gameState. But I could only get an Agent Position not set.](#i-want-to-update-an-enemy-position-thats-not-in-my-sight-range-i-need-to-assign-the-position-information-in-a-copy-of-gamestate-but-i-could-only-get-an-agent-position-not-set)
-      * [The Berkeley site claims that observations are noisy unless the other agent is nearby, but when I call getAgentPosition it gives the exact location of any agent, including opponents.](#the-berkeley-site-claims-that-observations-are-noisy-unless-the-other-agent-is-nearby-but-when-i-call-getagentposition-it-gives-the-exact-location-of-any-agent-including-opponents)
-      * [What does the "Score Balance" mean?](#what-does-the-score-balance-mean)
-      * [Is there any way to determine how long is left in a game? The Berkley spec it says 'games are limited to 1200 agent moves'. Will this limit also be the same for our tournament?](#is-there-any-way-to-determine-how-long-is-left-in-a-game-the-berkley-spec-it-says-games-are-limited-to-1200-agent-moves-will-this-limit-also-be-the-same-for-our-tournament)
-      * [Can I override the X (e.g., <code>makeObservation()</code>) method of <code>CaptureAgent</code>?](#can-i-override-the-x-eg-makeobservation-method-of-captureagent)
-      * [How to simulate opponent in MCTS?](#how-to-simulate-opponent-in-mcts)
-      * [The option --numTraining (or <code>-x</code>) option does not work, why?](#the-option---numtraining-or--x-option-does-not-work-why)
-
-Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
+- [FAQ - Pacman Projects - RMIT AI 2020](#faq---pacman-projects---rmit-ai-2020)
+- [Table of Contents](#table-of-contents)
+- [GENERAL](#general)
+  - [In a code assignment/project, how do I make sure I do not go against academic integrity?](#in-a-code-assignmentproject-how-do-i-make-sure-i-do-not-go-against-academic-integrity)
+  - [Cannot access the Google Form, says I need permission](#cannot-access-the-google-form-says-i-need-permission)
+  - [How do I submit my project solution in my GIT repository?](#how-do-i-submit-my-project-solution-in-my-git-repository)
+  - [How do I change the submission tag if I have already tagged one commit for submission?](#how-do-i-change-the-submission-tag-if-i-have-already-tagged-one-commit-for-submission)
+  - [I submitted wrongly (e.g., didn't tag correctly) and is now after the due date, can you consider my submission?](#i-submitted-wrongly-eg-didnt-tag-correctly-and-is-now-after-the-due-date-can-you-consider-my-submission)
+  - [Project specification says "You should code your implantation only at the locations ...." . Does this mean that we can't create our custom classes outside the provided functions?](#project-specification-says-you-should-code-your-implantation-only-at-the-locations---does-this-mean-that-we-cant-create-our-custom-classes-outside-the-provided-functions)
+  - [How do I zip files in folder X without including the folder X itself?](#how-do-i-zip-files-in-folder-x-without-including-the-folder-x-itself)
+- [PACMAN SETUP](#pacman-setup)
+  - [What is the best way to develop my solutions for the Pacman project?](#what-is-the-best-way-to-develop-my-solutions-for-the-pacman-project)
+  - [What version of Python should I use?](#what-version-of-python-should-i-use)
+  - [How do I run Python 3.6 in `coreteachingXX.csit.rmit.edu.au`??](#how-do-i-run-python-36-in-coreteachingxxcsitrmiteduau)
+  - [How to run Pacman remotely from `coreteaching`?](#how-to-run-pacman-remotely-from-coreteaching)
+  - [Coreteaching? What is that?](#coreteaching-what-is-that)
+  - [How do I setup a system in Windows with Python 3.6?](#how-do-i-setup-a-system-in-windows-with-python-36)
+- [TROUBLESHOOTING](#troubleshooting)
+  - [Can I use `problem._visited`?](#can-i-use-problem_visited)
+  - [I get "`_tkinter.TclError: no display name and no $DISPLAY environment variable`" error when running in WSL or ssh](#i-get-_tkintertclerror-no-display-name-and-no-display-environment-variable-error-when-running-in-wsl-or-ssh)
+  - [Cannot run Pacman due to problems with Tkinter: "`ImportError: No module named Tkinter`"](#cannot-run-pacman-due-to-problems-with-tkinter-importerror-no-module-named-tkinter)
+  - [How do I know the type of a variable in Python?](#how-do-i-know-the-type-of-a-variable-in-python)
+  - [Error module 'cgi' has no attribute 'escape' when running autograder.pt](#error-module-cgi-has-no-attribute-escape-when-running-autograderpt)
+  - [Cannot compile Metric-FF in MacOS](#cannot-compile-metric-ff-in-macos)
+- [Project 1](#project-1)
+  - [What actions should I return in the search algorithms?](#what-actions-should-i-return-in-the-search-algorithms)
+  - [I am getting too many expansions. What counts as an expansion?](#i-am-getting-too-many-expansions-what-counts-as-an-expansion)
+- [Project 2](#project-2)
+  - [Inconsistent depth in minimax project 2, Q2 and careful use of `__init__`](#inconsistent-depth-in-minimax-project-2-q2-and-careful-use-of-__init__)
+  - [Can we apply a "magic number" such as -9999 in our evaluation functions, as part of our logic not simply an arbitrary "return -9999"?](#can-we-apply-a-magic-number-such-as--9999-in-our-evaluation-functions-as-part-of-our-logic-not-simply-an-arbitrary-return--9999)
+- [Capture the Flag](#capture-the-flag)
+  - [How to load my additional files beyond myTeam.py?](#how-to-load-my-additional-files-beyond-myteampy)
+  - [Games go too fast! What should I do?](#games-go-too-fast-what-should-i-do)
+  - [How do I replay a game?](#how-do-i-replay-a-game)
+  - [How does one check if a given agent is currently scared? Is the only option to check the number of capsules in previous states?](#how-does-one-check-if-a-given-agent-is-currently-scared-is-the-only-option-to-check-the-number-of-capsules-in-previous-states)
+  - [It looks like the distance calculator is performing calculations in the background of our turns, can we replace it with our own version that does more?](#it-looks-like-the-distance-calculator-is-performing-calculations-in-the-background-of-our-turns-can-we-replace-it-with-our-own-version-that-does-more)
+  - [Can we re-use code from Project 2?](#can-we-re-use-code-from-project-2)
+  - [Ugly rendering of graphics under MacOs?](#ugly-rendering-of-graphics-under-macos)
+  - [How to call a planner like (like `ff`) or any another external tool?](#how-to-call-a-planner-like-like-ff-or-any-another-external-tool)
+  - [What does it mean that we must use 2/3 AI techniques? Do they all need to be part of the final submission?](#what-does-it-mean-that-we-must-use-23-ai-techniques-do-they-all-need-to-be-part-of-the-final-submission)
+  - [Can I use library or program X (e.g., tensorflow, FF planner, etc.)?](#can-i-use-library-or-program-x-eg-tensorflow-ff-planner-etc)
+  - [I have performance problem with `generateSuccessor` in my search implementation, why?](#i-have-performance-problem-with-generatesuccessor-in-my-search-implementation-why)
+  - [I want to update an enemy position that's not in my sight range. I need to assign the position information in a copy of `gameState`. But I could only get an Agent Position not set.](#i-want-to-update-an-enemy-position-thats-not-in-my-sight-range-i-need-to-assign-the-position-information-in-a-copy-of-gamestate-but-i-could-only-get-an-agent-position-not-set)
+  - [The Berkeley site claims that observations are noisy unless the other agent is nearby, but when I call `getAgentPosition` it gives the exact location of any agent, including opponents.](#the-berkeley-site-claims-that-observations-are-noisy-unless-the-other-agent-is-nearby-but-when-i-call-getagentposition-it-gives-the-exact-location-of-any-agent-including-opponents)
+  - [What does the "Score Balance" mean?](#what-does-the-score-balance-mean)
+  - [Is there any way to determine how long is left in a game? The Berkley spec it says 'games are limited to 1200 agent moves'. Will this limit also be the same for our tournament?](#is-there-any-way-to-determine-how-long-is-left-in-a-game-the-berkley-spec-it-says-games-are-limited-to-1200-agent-moves-will-this-limit-also-be-the-same-for-our-tournament)
+  - [Can I override the `X` (e.g., `makeObservation()`) method of `CaptureAgent`?](#can-i-override-the-x-eg-makeobservation-method-of-captureagent)
+  - [How to simulate opponent in MCTS?](#how-to-simulate-opponent-in-mcts)
+  - [The option `--numTraining` (or `-x`) option does not work, why?](#the-option---numtraining-or--x-option-does-not-work-why)
 
 -------------------------
 
@@ -210,7 +210,7 @@ Python 3.6.0 :: Anaconda 4.3.0 (64-bit)
 
 As you can see, I have python 2.7 and 3.6 coexisting peacefully in my OS."
 
-## How do I run Python 3.6 in `coreteaching`?
+## How do I run Python 3.6 in `coreteachingXX.csit.rmit.edu.au`??
 
 You need to activate it first using `scl`:
 
@@ -224,12 +224,15 @@ Python 3.6.9 (default, Sep 11 2019, 16:40:19)
 Type "help", "copyright", "credits" or "license" for more information.
 ```
 
-
-## How to run Pacman remotely from coreteaching?
+## How to run Pacman remotely from `coreteaching`?
 
 If you do not care about the graphics (e.g., for grading), then try using `--textGraphics` or even `--quietTextGraphics`. In most cases you will use `coreteaching` machines just to test that the autograder works well. The autograder does not need any graphical interface so it should work properly.
 
-If you do want the display, then you need to do X forwarding when you connect via ssh. If you are in Linux/Unix this is easy, just do `-X` and `-Y` when you ssh (e.g., `ssh -X -Y coreteaching01....`)
+If you do want the display, then you need to do X forwarding when you connect via ssh. If you are in Linux/Unix this is easy, just do `-X` and `-Y` when you ssh; for example:
+
+```shell
+$ ssh -X -Y username@coreteaching01.csit.rmit.edu.au
+```
 
 If you use Windows, then you need an X server running and set your ssh client (e.g., Putty) with X forwarding. For example, check [this page](https://superuser.com/questions/119792/how-to-use-x11-forwarding-with-putty) or this video:
 
