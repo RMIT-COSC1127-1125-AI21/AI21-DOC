@@ -1,4 +1,4 @@
-# FAQ - Pacman Projects - RMIT AI 2020
+# FAQ - Pacman Projects - RMIT AI 2021
 
 This is a FAQ only for the project assessments (i.e., Pacman projects).
 
@@ -9,7 +9,7 @@ As any FAQ page, this page is always "under construction". As we realize that so
 Table of Contents
 =================
 
-- [FAQ - Pacman Projects - RMIT AI 2020](#faq---pacman-projects---rmit-ai-2020)
+- [FAQ - Pacman Projects - RMIT AI 2021](#faq---pacman-projects---rmit-ai-2021)
 - [Table of Contents](#table-of-contents)
 - [GENERAL](#general)
   - [In a code assignment/project, how do I make sure I do not go against academic integrity?](#in-a-code-assignmentproject-how-do-i-make-sure-i-do-not-go-against-academic-integrity)
