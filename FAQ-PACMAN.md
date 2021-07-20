@@ -19,6 +19,7 @@ Table of Contents
   - [I submitted wrongly (e.g., didn't tag correctly) and is now after the due date, can you consider my submission?](#i-submitted-wrongly-eg-didnt-tag-correctly-and-is-now-after-the-due-date-can-you-consider-my-submission)
   - [Project specification says "You should code your implantation only at the locations ...." . Does this mean that we can't create our custom classes outside the provided functions?](#project-specification-says-you-should-code-your-implantation-only-at-the-locations---does-this-mean-that-we-cant-create-our-custom-classes-outside-the-provided-functions)
   - [How do I zip files in folder X without including the folder X itself?](#how-do-i-zip-files-in-folder-x-without-including-the-folder-x-itself)
+  - [The autograder says _"Your grades are NOT yet registered."_ What should I do to register?](#the-autograder-says-your-grades-are-not-yet-registered-what-should-i-do-to-register)
 - [PACMAN SETUP](#pacman-setup)
   - [What is the best way to develop my solutions for the Pacman project?](#what-is-the-best-way-to-develop-my-solutions-for-the-pacman-project)
   - [What version of Python should I use?](#what-version-of-python-should-i-use)
@@ -75,7 +76,6 @@ If you see something like this:
 
 then chances are you are not correctly logged into your uni account or you are logged with your private Google account and your browser cannot distinguish. Either open it on an incognito browser window or make sure you are logged into your uni account. There is nothing I can do from my side if you don&rsquo;t access the form with the right authentication credentials.
 
-
 ## How do I submit my project solution in my GIT repository?
 
 You submit by **tagging the _exact_ commit that you want to submit and be marked**, using the exact name given in the assignment specification. We will ONLY marked tagged submissions and will ONLY mark the tagged commit. Students can have many commits, and branches, even commits after the deadline. We will mark ONLY what you submit.
@@ -123,13 +123,11 @@ We will not fix any submission and it is your responsibility to do it correctly.
 
 However, the nice thing about git-based projects/assessments is that we can rely on commits. If you have submitted your tag incorrectly (did not tag it at all, tagged with different name or different capital letters), then please fix your submission by tagging the specific commit you want me to mark. I will use the timestamp of the commit itself, not of when it was tagged. This means that if the commit was done before the deadline, then all good!! Isn't this cool?
 
-
 ## Project specification says "You should code your implantation only at the locations ...." . Does this mean that we can't create our custom classes outside the provided functions?
 
 Yes, you can create some help functions or classes, but **always** in the allowed files. Any other change in any other file will be totally ignored.
 
 If you want to create custom classes and functions, you can also nest them inside the location where you read `***YOUR CODE HERE***`. See [this link](https://www.datacamp.com/community/tutorials/inner-classes-python) and [this link](https://www.programiz.com/python-programming/closure#:~:text=A%20function%20defined%20inside%20another,in%20order%20to%20modify%20them) for more info.
-
 
 ## How do I zip files in folder X without including the folder X itself?
 
@@ -144,6 +142,14 @@ However, this is OK if you don&rsquo;t need ANY folder at all in the zip, everyt
 ```bash
 $ rm -f myAgent.zip ; cd project-2/MySolution; zip -r -j ../../myAgent.zip * ; cd ..
 ```
+
+## The autograder says _"Your grades are NOT yet registered."_ What should I do to register?
+
+The autograder is some immediate **feedback** for you, but it is not the final grading we do as teaching staff.  
+
+So, while the automarker is a useful indication of your performance, it may not represent the ultimate mark. We reserve the right to run more tests, inspect your code and repo manually, run similarity software for integrity checks (this year via [Codequiry](https://codequiry.com/)), and arrange for a face-to-face meeting for a discussion and demo of your solution if needed.
+
+After submission deadline we will mark them all and provide you with the results.
 
 ------------------------------
 # PACMAN SETUP
