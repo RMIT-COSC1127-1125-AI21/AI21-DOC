@@ -14,6 +14,7 @@ Table of Contents
 - [GENERAL](#general)
   - [In a code assignment/project, how do I make sure I do not go against academic integrity?](#in-a-code-assignmentproject-how-do-i-make-sure-i-do-not-go-against-academic-integrity)
   - [Cannot access the Google Form, says I need permission](#cannot-access-the-google-form-says-i-need-permission)
+  - [Git, GitHub, what is that?](#git-github-what-is-that)
   - [How do I submit my project solution in my GIT repository?](#how-do-i-submit-my-project-solution-in-my-git-repository)
   - [How do I change the submission tag if I have already tagged one commit for submission?](#how-do-i-change-the-submission-tag-if-i-have-already-tagged-one-commit-for-submission)
   - [I submitted wrongly (e.g., didn't tag correctly) and is now after the due date, can you consider my submission?](#i-submitted-wrongly-eg-didnt-tag-correctly-and-is-now-after-the-due-date-can-you-consider-my-submission)
@@ -74,8 +75,17 @@ If you see something like this:
 
 ![google-form](img/permission-google.png)
 
-then chances are you are not correctly logged into your uni account or you are logged with your private Google account and your browser cannot distinguish. Either open it on an incognito browser window or make sure you are logged into your uni account. There is nothing I can do from my side if you don&rsquo;t access the form with the right authentication credentials.
+then chances are you are not correctly logged into your uni account or you are logged with your private Google account and your browser cannot distinguish. Either open it on an incognito browser window or make sure you are logged into your uni account. There is nothing I can do from my side if you don't access the form with the right authentication credentials.
 
+## Git, GitHub, what is that?
+
+We will use proper (git) version control in all our programming projects. This is totally standard practice in the industry and you would have seen that in previous courses (SEF and SEPT at least). Said so, if you want to refresh or have a quick intro to it, here are two resources I found useful:
+
+- [30' video on Git & GitHub](https://youtu.be/jG4Vs81kMlc).
+- [GitHub Guides](https://guides.github.com/).
+- [Git \& GitHub Tutorial & Reference @ Javatpoint](https://www.javatpoint.com/git).
+
+There are lots more good resources on the web of course!
 ## How do I submit my project solution in my GIT repository?
 
 You submit by **tagging the _exact_ commit that you want to submit and be marked**, using the exact name given in the assignment specification. We will ONLY marked tagged submissions and will ONLY mark the tagged commit. Students can have many commits, and branches, even commits after the deadline. We will mark ONLY what you submit.
