@@ -6,11 +6,7 @@ For general questions about the course, refer to the other FAQs available under 
 
 As any FAQ page, this page is always "under construction". As we realize that some questions become common, we add them here.
 
-Table of Contents
-=================
-
 - [FAQ - Pacman Projects - RMIT AI 2021](#faq---pacman-projects---rmit-ai-2021)
-- [Table of Contents](#table-of-contents)
 - [GENERAL](#general)
   - [In a code assignment/project, how do I make sure I do not go against academic integrity?](#in-a-code-assignmentproject-how-do-i-make-sure-i-do-not-go-against-academic-integrity)
   - [Cannot access the Google Form, says I need permission](#cannot-access-the-google-form-says-i-need-permission)
@@ -37,7 +33,7 @@ Table of Contents
   - [Cannot compile Metric-FF in MacOS](#cannot-compile-metric-ff-in-macos)
 - [Project 1](#project-1)
   - [What actions should I return in the search algorithms?](#what-actions-should-i-return-in-the-search-algorithms)
-  - [I am getting too many expansions. What counts as an expansion?](#i-am-getting-too-many-expansions-what-counts-as-an-expansion)
+  - [What counts as an expansion? I am getting too many expansions....](#what-counts-as-an-expansion-i-am-getting-too-many-expansions)
 - [Project 2](#project-2)
   - [Inconsistent depth in minimax project 2, Q2 and careful use of `__init__`](#inconsistent-depth-in-minimax-project-2-q2-and-careful-use-of-__init__)
   - [Can we apply a "magic number" such as -9999 in our evaluation functions, as part of our logic not simply an arbitrary "return -9999"?](#can-we-apply-a-magic-number-such-as--9999-in-our-evaluation-functions-as-part-of-our-logic-not-simply-an-arbitrary-return--9999)
@@ -354,9 +350,11 @@ WEST = 'West'
 STOP = 'Stop'
 ```
 
-## I am getting too many expansions. What counts as an expansion?
+## What counts as an expansion? I am getting too many expansions....
 
-Basically, every time you call `problem.getSuccessors(someNode)`
+Basically, every time you call `problem.getSuccessors(.)`. 
+
+(It is not popping out from the queue, as we don't have access to that part of your code!)
 
 So be careful not using that function for more than what is needed. :-)
 
