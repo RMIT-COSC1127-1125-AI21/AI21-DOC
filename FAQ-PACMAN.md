@@ -17,6 +17,7 @@ As any FAQ page, this page is always "under construction". As we realize that so
   - [Project specification says "You should code your implantation only at the locations ...." . Does this mean that we can't create our custom classes outside the provided functions?](#project-specification-says-you-should-code-your-implantation-only-at-the-locations---does-this-mean-that-we-cant-create-our-custom-classes-outside-the-provided-functions)
   - [How do I zip files in folder X without including the folder X itself?](#how-do-i-zip-files-in-folder-x-without-including-the-folder-x-itself)
   - [The autograder says _"Your grades are NOT yet registered."_ What should I do to register?](#the-autograder-says-your-grades-are-not-yet-registered-what-should-i-do-to-register)
+  - [Should I pass all the autograder tests?](#should-i-pass-all-the-autograder-tests)
 - [PACMAN SETUP](#pacman-setup)
   - [What is the best way to develop my solutions for the Pacman project?](#what-is-the-best-way-to-develop-my-solutions-for-the-pacman-project)
   - [What version of Python should I use?](#what-version-of-python-should-i-use)
@@ -156,6 +157,18 @@ The autograder is some immediate **feedback** for you, but it is not the final g
 So, while the automarker is a useful indication of your performance, it may not represent the ultimate mark. We reserve the right to run more tests, inspect your code and repo manually, run similarity software for integrity checks (this year via [Codequiry](https://codequiry.com/)), and arrange for a face-to-face meeting for a discussion and demo of your solution if needed.
 
 After submission deadline we will mark them all and provide you with the results.
+
+
+## Should I pass all the autograder tests?
+
+Well, if you want to have a chance to get full marks _yes_. 
+
+So, the short answer is that you should try to pass the test cases provided.
+
+If your solution does not meet those test cases, it is not exactly what we are looking for (it may still get some marks).  Even if your solution does meet every test case given, it still does not necessarily mean it is perfect, and we may run additional tests when we grade.
+
+We are aware that it can be a bit unforgiving to work with the automated test harness, but often your understanding of the underlying algorithms are greatly improved when you need to dig into particular corner cases, so it's time well spent. 
+
 
 ------------------------------
 # PACMAN SETUP
