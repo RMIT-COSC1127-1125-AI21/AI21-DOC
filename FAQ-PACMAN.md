@@ -6,11 +6,7 @@ For general questions about the course, refer to the other FAQs available under 
 
 As any FAQ page, this page is always "under construction". As we realize that some questions become common, we add them here.
 
-Table of Contents
-=================
-
 - [FAQ - Pacman Projects - RMIT AI 2021](#faq---pacman-projects---rmit-ai-2021)
-- [Table of Contents](#table-of-contents)
 - [GENERAL](#general)
   - [In a code assignment/project, how do I make sure I do not go against academic integrity?](#in-a-code-assignmentproject-how-do-i-make-sure-i-do-not-go-against-academic-integrity)
   - [Cannot access the Google Form, says I need permission](#cannot-access-the-google-form-says-i-need-permission)
@@ -21,6 +17,7 @@ Table of Contents
   - [Project specification says "You should code your implantation only at the locations ...." . Does this mean that we can't create our custom classes outside the provided functions?](#project-specification-says-you-should-code-your-implantation-only-at-the-locations---does-this-mean-that-we-cant-create-our-custom-classes-outside-the-provided-functions)
   - [How do I zip files in folder X without including the folder X itself?](#how-do-i-zip-files-in-folder-x-without-including-the-folder-x-itself)
   - [The autograder says _"Your grades are NOT yet registered."_ What should I do to register?](#the-autograder-says-your-grades-are-not-yet-registered-what-should-i-do-to-register)
+  - [Should I pass all the autograder tests?](#should-i-pass-all-the-autograder-tests)
 - [PACMAN SETUP](#pacman-setup)
   - [What is the best way to develop my solutions for the Pacman project?](#what-is-the-best-way-to-develop-my-solutions-for-the-pacman-project)
   - [What version of Python should I use?](#what-version-of-python-should-i-use)
@@ -39,7 +36,8 @@ Table of Contents
   - [One of the many tests is failing, how can I just run one question or even one particular test only?](#one-of-the-many-tests-is-failing-how-can-i-just-run-one-question-or-even-one-particular-test-only)
 - [Project 1](#project-1)
   - [What actions should I return in the search algorithms?](#what-actions-should-i-return-in-the-search-algorithms)
-  - [I am getting too many expansions. What counts as an expansion?](#i-am-getting-too-many-expansions-what-counts-as-an-expansion)
+  - [What counts as an expansion? I am getting too many expansions....](#what-counts-as-an-expansion-i-am-getting-too-many-expansions)
+  - [My solution works manually for `tinaMaze` but the authograder fails. The state format used in the autogarders tests are different from the Pacman game's in `tinaMaze`. What happens here?](#my-solution-works-manually-for-tinamaze-but-the-authograder-fails-the-state-format-used-in-the-autogarders-tests-are-different-from-the-pacman-games-in-tinamaze-what-happens-here)
 - [Project 2](#project-2)
   - [Inconsistent depth in minimax project 2, Q2 and careful use of `__init__`](#inconsistent-depth-in-minimax-project-2-q2-and-careful-use-of-__init__)
   - [Can we apply a "magic number" such as -9999 in our evaluation functions, as part of our logic not simply an arbitrary "return -9999"?](#can-we-apply-a-magic-number-such-as--9999-in-our-evaluation-functions-as-part-of-our-logic-not-simply-an-arbitrary-return--9999)
@@ -162,6 +160,18 @@ The autograder is some immediate **feedback** for you, but it is not the final g
 So, while the automarker is a useful indication of your performance, it may not represent the ultimate mark. We reserve the right to run more tests, inspect your code and repo manually, run similarity software for integrity checks (this year via [Codequiry](https://codequiry.com/)), and arrange for a face-to-face meeting for a discussion and demo of your solution if needed.
 
 After submission deadline we will mark them all and provide you with the results.
+
+
+## Should I pass all the autograder tests?
+
+Well, if you want to have a chance to get full marks _yes_. 
+
+So, the short answer is that you should try to pass the test cases provided.
+
+If your solution does not meet those test cases, it is not exactly what we are looking for (it may still get some marks).  Even if your solution does meet every test case given, it still does not necessarily mean it is perfect, and we may run additional tests when we grade.
+
+We are aware that it can be a bit unforgiving to work with the automated test harness, but often your understanding of the underlying algorithms are greatly improved when you need to dig into particular corner cases, so it's time well spent. 
+
 
 ------------------------------
 # PACMAN SETUP
@@ -358,13 +368,19 @@ WEST = 'West'
 STOP = 'Stop'
 ```
 
-## I am getting too many expansions. What counts as an expansion?
+## What counts as an expansion? I am getting too many expansions....
 
-Basically, every time you call `problem.getSuccessors(someNode)`
+Basically, every time you call `problem.getSuccessors(.)`. 
+
+(It is not popping out from the queue, as we don't have access to that part of your code!)
 
 So be careful not using that function for more than what is needed. :-)
 
 One can implement the various search algorithms (e.g., DFS) doing one call to `getSuccessor()` per loop/node, as in the pseudo-code (e.g., book or slides).
+
+## My solution works manually for `tinaMaze` but the authograder fails. The state format used in the autogarders tests are different from the Pacman game's in `tinaMaze`. What happens here?
+
+Indeed, the test cases often have atomic states instead of `(x,y)` coordinates, but this should not affect your code at all. From the algorithms perspective, a state is (just) a "state", regardless of the representation. The autograder often checks corner cases which are not tested by the standard mazes, which may be why you see it failing (despite your manual cases working).
 
 -----------------
 # Project 2
