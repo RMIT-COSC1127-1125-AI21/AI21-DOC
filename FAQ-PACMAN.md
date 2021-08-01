@@ -34,7 +34,9 @@ Table of Contents
   - [Cannot run Pacman due to problems with Tkinter: "`ImportError: No module named Tkinter`"](#cannot-run-pacman-due-to-problems-with-tkinter-importerror-no-module-named-tkinter)
   - [How do I know the type of a variable in Python?](#how-do-i-know-the-type-of-a-variable-in-python)
   - [Error module 'cgi' has no attribute 'escape' when running autograder.pt](#error-module-cgi-has-no-attribute-escape-when-running-autograderpt)
+  - [Can't fit the Pacman window in my screen, can I resize it?](#cant-fit-the-pacman-window-in-my-screen-can-i-resize-it)
   - [Cannot compile Metric-FF in MacOS](#cannot-compile-metric-ff-in-macos)
+  - [One of the many tests is failing, how can I just run one question or even one particular test only?](#one-of-the-many-tests-is-failing-how-can-i-just-run-one-question-or-even-one-particular-test-only)
 - [Project 1](#project-1)
   - [What actions should I return in the search algorithms?](#what-actions-should-i-return-in-the-search-algorithms)
   - [I am getting too many expansions. What counts as an expansion?](#i-am-getting-too-many-expansions-what-counts-as-an-expansion)
@@ -284,10 +286,7 @@ If you do want the display, then you need to do X forwarding when you connect vi
 
 If you use Windows, then you need an X server running and set your ssh client (e.g., Putty) with X forwarding. For example, check [this page](https://superuser.com/questions/119792/how-to-use-x11-forwarding-with-putty) and [this video](https://www.youtube.com/watch?v=vwZXhTykSis).
 
-
-
 Said so, for development, **we strongly suggest** to clone your repo locally on your machine and work there (e.g., using PyCharm, Visual Code Studio).
-
 
 ## Cannot run Pacman due to problems with Tkinter: "`ImportError: No module named Tkinter`"
 
@@ -317,12 +316,13 @@ Check this video to know how to print the type of a variable in Python:
 
 [![Alt text](https://img.youtube.com/vi/iROZLaQGy4s/0.jpg)](https://www.youtube.com/watch?v=iROZLaQGy4s)
 
-
 ## Error module 'cgi' has no attribute 'escape' when running autograder.pt
 
 You are probably not using Python 3.6 but a higher version. Check [this post](https://piazza.com/class/kbsmlzxg3k7418?cid=28).
 
+## Can't fit the Pacman window in my screen, can I resize it?
 
+The Pacman windows cannot be resized once open. However, you can use the option `-z <float>` (or `--zoom <float>`) to scale the window. For example, using `-z 0.5` will scale down the window by half. Using this option you should be able to fit the entire window in the screen.
 ## Cannot compile Metric-FF in MacOS
 
 Some Mac users have reported this error when compiling [Metric-FF](https://fai.cs.uni-saarland.de/hoffmann/metric-ff.html) planner:
@@ -335,7 +335,11 @@ The problem seems to be that the default `gcc` in Mac is set to be `clang`. So, 
 make CC=/usr/local/bin/gcc-7
 ```
 
-Thanks Banhao!
+Thanks Banhao from AI'20!
+
+## One of the many tests is failing, how can I just run one question or even one particular test only?
+
+Use the `-q n` option for running just one question (e.g., `-q q3` to run Question 3 only) or `-t` to run only a specific test (e.g., `-t test_cases/q1/graph_bfs_vs_dfs`).
 
 
 -----------------
