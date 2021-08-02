@@ -292,7 +292,7 @@ Under Python convention, single underscore before a name (e.g., `_visited`) deno
 
 ## I get "`_tkinter.TclError: no display name and no $DISPLAY environment variable`" error when running in WSL or ssh
 
-If you do not care about the graphics (e.g., for grading), then try using `--textGraphics` or even `--quietTextGraphics`.
+If you do not care about the graphics, then try using `-t` (or `--textGraphics`) or even `-q` (or `--quietTextGraphics`).
 
 If you do want the display, then you need to do X forwarding when you connect via ssh. If you are in Linux/Unix this is easy, just do `-X` and `-Y` when you ssh (e.g., `ssh -X -Y server`).
 
