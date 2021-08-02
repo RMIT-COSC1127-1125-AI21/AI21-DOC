@@ -38,6 +38,7 @@ As any FAQ page, this page is always "under construction". As we realize that so
   - [What actions should I return in the search algorithms?](#what-actions-should-i-return-in-the-search-algorithms)
   - [What counts as an expansion? I am getting too many expansions....](#what-counts-as-an-expansion-i-am-getting-too-many-expansions)
   - [My solution works manually for `tinaMaze` but the authograder fails. The state format used in the autogarders tests are different from the Pacman game's in `tinaMaze`. What happens here?](#my-solution-works-manually-for-tinamaze-but-the-authograder-fails-the-state-format-used-in-the-autogarders-tests-are-different-from-the-pacman-games-in-tinamaze-what-happens-here)
+  - [What is a good timeout for Q7 (Eating All The Dots)?](#what-is-a-good-timeout-for-q7-eating-all-the-dots)
 - [Project 2](#project-2)
   - [Inconsistent depth in minimax project 2, Q2 and careful use of `__init__`](#inconsistent-depth-in-minimax-project-2-q2-and-careful-use-of-__init__)
   - [Can we apply a "magic number" such as -9999 in our evaluation functions, as part of our logic not simply an arbitrary "return -9999"?](#can-we-apply-a-magic-number-such-as--9999-in-our-evaluation-functions-as-part-of-our-logic-not-simply-an-arbitrary-return--9999)
@@ -388,7 +389,61 @@ One can implement the various search algorithms (e.g., DFS) doing one call to `g
 
 ## My solution works manually for `tinaMaze` but the authograder fails. The state format used in the autogarders tests are different from the Pacman game's in `tinaMaze`. What happens here?
 
-Indeed, the test cases often have atomic states instead of `(x,y)` coordinates, but this should not affect your code at all. From the algorithms perspective, a state is (just) a "state", regardless of the representation. The autograder often checks corner cases which are not tested by the standard mazes, which may be why you see it failing (despite your manual cases working).
+Indeed, the test cases often have atomic states instead of `(x,y)` coordinates, but this should not affect your code at all. From the algorithms perspective, a state is (just) a "state", regardless of the representation. The autograder often checks corner cases which are not tested by the standard 
+mazes, which may be why you see it failing (despite your manual cases working).
+
+## What is a good timeout for Q7 (Eating All The Dots)? 
+
+In this question you have to consider two question:
+
+1. How good is your A* implementation?
+2. How good is your heuristic?
+
+Basically you are after a good enough A* implementation and a heursitic that improves A* when used without heuristic. Remember taht a heuristic is useful, only if gives benefit over not using it; otherwise what is the point of it? If your heuristic expands very few nodes, BUT it takes alot of time to compute, then the heuristic will not be beneficial after all. Consider, what would be the very best heuristic you can use (but not useful)? ;-)
+
+Now, to test your A* without the heuristic, just `return 0` as heuristic and see how it runs. In my laptop:
+
+```shell
+$ python pacman.py -l trickySearch -p AStarFoodSearchAgent -q
+
+Path found with total cost of 60 in 1.6 seconds
+Search nodes expanded: 16688
+Pacman emerges victorious! Score: 570
+Average Score: 570.0
+Scores:        570.0
+Win Rate:      1/1 (1.00)
+Record:        Win
+```
+
+So, it took 1.6seconds and expanded 16k+  nodes. However, when I ran it with the heuristic:
+
+```shell
+$ python pacman.py -l trickySearch -p AStarFoodSearchAgent -q
+
+Path found with total cost of 60 in 0.1 seconds
+Search nodes expanded: 255
+Pacman emerges victorious! Score: 570
+Average Score: 570.0
+Scores:        570.0
+Win Rate:      1/1 (1.00)
+Record:        Win
+```
+
+Note this is a really good heuristic (expanded only 255!) and we are not expecting this to get full marks. There are very fast implementations taking 0.5secs and expanding 1500 nodes, way below the 7000 mark!
+
+
+Finally, take note of the comment in the source code:
+
+```
+If you want to *store* information to be reused in other calls to the
+    heuristic, there is a dictionary called problem.heuristicInfo that you can
+    use. For example, if you only want to count the walls once and store that
+    value, try: problem.heuristicInfo['wallCount'] = problem.walls.count()
+    Subsequent calls to this heuristic can access
+    problem.heuristicInfo['wallCount']
+```
+
+This could be a deal breaker and could move your heuristic performance from 30secs to 1sec.
 
 -----------------
 # Project 2
