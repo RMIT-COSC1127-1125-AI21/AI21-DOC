@@ -290,17 +290,25 @@ Under Python convention, single underscore before a name (e.g., `_visited`) deno
 
 ## I get "`_tkinter.TclError: no display name and no $DISPLAY environment variable`" error when running in WSL or ssh
 
-If you do not care about the graphics (e.g., for grading), then try using `--textGraphics` or even `--quietTextGraphics`. 
+If you do not care about the graphics (e.g., for grading), then try using `--textGraphics` or even `--quietTextGraphics`.
 
 If you do want the display, then you need to do X forwarding when you connect via ssh. If you are in Linux/Unix this is easy, just do `-X` and `-Y` when you ssh (e.g., `ssh -X -Y server`).
 
 If you use Windows, then you need an X server running and set your ssh client (e.g., Putty) with X forwarding. For example, check [this page](https://superuser.com/questions/119792/how-to-use-x11-forwarding-with-putty) and [this video](https://www.youtube.com/watch?v=vwZXhTykSis).
 
-Said so, for development, **we strongly suggest** to clone your repo locally on your machine and work there (e.g., using PyCharm, Visual Code Studio).
+Also, if you are using Windows hooked up into Linux (WSL or WSL2), you need to properly resolve the IP Address seen by Linux. For example, under Ubuntu bash, add this to your `~/.bashrc`:
+
+```shell
+export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
+```
+
+Then install the [VCXSRV](https://sourceforge.net/projects/vcxsrv/files/vcxsrv/) X-server. Run xLaunch and "Disable access control". And add a new inbound rule in Windows Firewall for TCP Port 6000.  Use the ssh command as above.
+
+As you can see, all this can be too complicated for no benefit. For development, **we strongly suggest** to clone your repo locally on your machine and work there (e.g., using PyCharm, Visual Code Studio).
 
 ## Cannot run Pacman due to problems with Tkinter: "`ImportError: No module named Tkinter`"
 
-Install Tkinter:
+Install Tkinter in your system. If you are running `conda`:
 
 ```bash
 $ conda install tk
