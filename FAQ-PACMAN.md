@@ -41,6 +41,7 @@ As any FAQ page, this page is always "under construction". As we realize that so
   - [My solution works manually for `tinaMaze` but the authograder fails. The state format used in the autogarders tests are different from the Pacman game's in `tinaMaze`. What happens here?](#my-solution-works-manually-for-tinamaze-but-the-authograder-fails-the-state-format-used-in-the-autogarders-tests-are-different-from-the-pacman-games-in-tinamaze-what-happens-here)
   - [What is a good timeout for Q7 (Eating All The Dots)?](#what-is-a-good-timeout-for-q7-eating-all-the-dots)
   - [In Q7, can I take a heuristic from elsewhere (e.g., Google) and implement it?](#in-q7-can-i-take-a-heuristic-from-elsewhere-eg-google-and-implement-it)
+  - [In Q7, what timeout will be used? How do I know what timeout should I use?](#in-q7-what-timeout-will-be-used-how-do-i-know-what-timeout-should-i-use)
 - [Project 2](#project-2)
   - [Inconsistent depth in minimax project 2, Q2 and careful use of `__init__`](#inconsistent-depth-in-minimax-project-2-q2-and-careful-use-of-__init__)
   - [Can we apply a "magic number" such as -9999 in our evaluation functions, as part of our logic not simply an arbitrary "return -9999"?](#can-we-apply-a-magic-number-such-as--9999-in-our-evaluation-functions-as-part-of-our-logic-not-simply-an-arbitrary-return--9999)
@@ -465,6 +466,44 @@ The objective of the exercise is NOT to program in Python a solution that somebo
 What we are interested in assessing for this question is your ability to understand what heuristics are and design them yourself. As a result, while searching online for heuristics **in general** would be fine (but we doubt useful here if you read the book), searching for a heuristic, even at a conceptual level, for this particular problem is definitively **not** OK.
 
 Think about what some relaxations of the problem are, and how you might design a heuristic from those. There are a number of quite simple heuristics that do quite well, as well as some more sophisticated ones.
+
+## In Q7, what timeout will be used? How do I know what timeout should I use?
+
+The key point to understand here is *why do we use heuristics after all?* We use heuristics to guide the search---informed search---so that it runs _faster_. 
+
+OK, but _faster thank what?_ Well, at least faster than if we do not use a heuristic, right? So, we can set the heuristic to just be `0` (by just doing `return 0` at the top of function `foodHeuristic`) and see how much it would take by running:
+
+```shell
+$ python pacman.py -l trickySearch -p AStarFoodSearchAgent -q 
+
+Path found with total cost of 60 in 1.9 seconds
+Search nodes expanded: 16688
+Pacman emerges victorious! Score: 570
+Average Score: 570.0
+Scores:        570.0
+Win Rate:      1/1 (1.00)
+Record:        Win
+```
+
+So it takes 1.9 seconds when running the agent with an "empty" heuristic. What happens when we plugged our heuristic? 
+
+
+```shell
+$ python pacman.py -l trickySearch -p AStarFoodSearchAgent -q 
+
+Path found with total cost of 60 in 0.2 seconds
+Search nodes expanded: 255
+Pacman emerges victorious! Score: 570
+Average Score: 570.0
+Scores:        570.0
+Win Rate:      1/1 (1.00)
+Record:        Win
+```
+
+As one can see the time was cut down to just 0.2 seconds (10% of the time when no heuristic is used!) and the number of nodes expanded to just 255. Note this is a very powerful heuristic, you can reduce the time to 50% while expanding 1500 nodes.
+
+So, the question is not just whether the heuristic reduces the number of expansions, but also, ultimately, the search time.
+
 
 -----------------
 # Project 2
