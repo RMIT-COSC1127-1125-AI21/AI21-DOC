@@ -10,14 +10,16 @@ As any FAQ page, this page is always "under construction". As we realize that so
 - [GENERAL](#general)
   - [In a code assignment/project, how do I make sure I do not go against academic integrity?](#in-a-code-assignmentproject-how-do-i-make-sure-i-do-not-go-against-academic-integrity)
   - [Cannot access the Google Form, says I need permission](#cannot-access-the-google-form-says-i-need-permission)
-  - [Git, GitHub, what is that?](#git-github-what-is-that)
-  - [How do I submit my project solution in my GIT repository?](#how-do-i-submit-my-project-solution-in-my-git-repository)
-  - [How do I change the submission tag if I have already tagged one commit for submission?](#how-do-i-change-the-submission-tag-if-i-have-already-tagged-one-commit-for-submission)
   - [I submitted wrongly (e.g., didn't tag correctly) and is now after the due date, can you consider my submission?](#i-submitted-wrongly-eg-didnt-tag-correctly-and-is-now-after-the-due-date-can-you-consider-my-submission)
   - [Project specification says "You should code your implantation only at the locations ...." . Does this mean that we can't create our custom classes outside the provided functions?](#project-specification-says-you-should-code-your-implantation-only-at-the-locations---does-this-mean-that-we-cant-create-our-custom-classes-outside-the-provided-functions)
   - [How do I zip files in folder X without including the folder X itself?](#how-do-i-zip-files-in-folder-x-without-including-the-folder-x-itself)
   - [The autograder says _"Your grades are NOT yet registered."_ What should I do to register?](#the-autograder-says-your-grades-are-not-yet-registered-what-should-i-do-to-register)
   - [Should I pass all the autograder tests?](#should-i-pass-all-the-autograder-tests)
+- [GIT & GITHUB](#git--github)
+  - [Git, GitHub, what is that?](#git-github-what-is-that)
+  - [How do I submit my project solution in my GIT repository?](#how-do-i-submit-my-project-solution-in-my-git-repository)
+  - [How do I change the submission tag if I have already tagged one commit for submission?](#how-do-i-change-the-submission-tag-if-i-have-already-tagged-one-commit-for-submission)
+  - [Cannot clone or push to GitHub with my password credentials?](#cannot-clone-or-push-to-github-with-my-password-credentials)
 - [PACMAN SETUP](#pacman-setup)
   - [What is the best way to develop my solutions for the Pacman project?](#what-is-the-best-way-to-develop-my-solutions-for-the-pacman-project)
   - [What version of Python should I use?](#what-version-of-python-should-i-use)
@@ -34,7 +36,7 @@ As any FAQ page, this page is always "under construction". As we realize that so
   - [Can't fit the Pacman window in my screen, can I resize it?](#cant-fit-the-pacman-window-in-my-screen-can-i-resize-it)
   - [Cannot compile Metric-FF in MacOS](#cannot-compile-metric-ff-in-macos)
   - [One of the many tests is failing, how can I just run one question or even one particular test only?](#one-of-the-many-tests-is-failing-how-can-i-just-run-one-question-or-even-one-particular-test-only)
-- [My a* search works but it takes too long, what's the best way to work out why it's taking so long/work out how to optimise it?](#my-a-search-works-but-it-takes-too-long-whats-the-best-way-to-work-out-why-its-taking-so-longwork-out-how-to-optimise-it)
+  - [My X algorithm (e.g. A* search) works but it takes too long, what's the best way to work out why it's taking so long/work out how to optimise it?](#my-x-algorithm-eg-a-search-works-but-it-takes-too-long-whats-the-best-way-to-work-out-why-its-taking-so-longwork-out-how-to-optimise-it)
 - [Project 1](#project-1)
   - [What actions should I return in the search algorithms?](#what-actions-should-i-return-in-the-search-algorithms)
   - [What counts as an expansion? I am getting too many expansions....](#what-counts-as-an-expansion-i-am-getting-too-many-expansions)
@@ -80,6 +82,55 @@ If you see something like this:
 ![google-form](img/permission-google.png)
 
 then chances are you are not correctly logged into your uni account or you are logged with your private Google account and your browser cannot distinguish. Either open it on an incognito browser window or make sure you are logged into your uni account. There is nothing I can do from my side if you don't access the form with the right authentication credentials.
+
+
+## I submitted wrongly (e.g., didn't tag correctly) and is now after the due date, can you consider my submission?
+
+We will not fix any submission and it is your responsibility to do it correctly.
+
+However, the nice thing about git-based projects/assessments is that we can rely on commits. If you have submitted your tag incorrectly (did not tag it at all, tagged with different name or different capital letters), then please fix your submission by tagging the specific commit you want me to mark. I will use the timestamp of the commit itself, not of when it was tagged. This means that if the commit was done before the deadline, then all good!! Isn't this cool?
+
+## Project specification says "You should code your implantation only at the locations ...." . Does this mean that we can't create our custom classes outside the provided functions?
+
+Yes, you can create some help functions or classes, but **always** in the allowed files. Any other change in any other file will be totally ignored.
+
+If you want to create custom classes and functions, you can also nest them inside the location where you read `***YOUR CODE HERE***`. See [this link](https://www.datacamp.com/community/tutorials/inner-classes-python) and [this link](https://www.programiz.com/python-programming/closure#:~:text=A%20function%20defined%20inside%20another,in%20order%20to%20modify%20them) for more info.
+
+## How do I zip files in folder X without including the folder X itself?
+
+Use the `-j` option, for example:
+
+```bash
+$ zip -r -j myAgent.zip project-2/MySolution/ 
+```
+
+However, this is OK if you don&rsquo;t need ANY folder at all in the zip, everything in the root. If you just don&rsquo;t want the root folder included but you do want all the folders after that to be included:
+
+```bash
+$ rm -f myAgent.zip ; cd project-2/MySolution; zip -r -j ../../myAgent.zip * ; cd ..
+```
+
+## The autograder says _"Your grades are NOT yet registered."_ What should I do to register?
+
+The autograder is some immediate **feedback** for you, but it is not the final grading we do as teaching staff.  
+
+So, while the automarker is a useful indication of your performance, it may not represent the ultimate mark. We reserve the right to run more tests, inspect your code and repo manually, run similarity software for integrity checks (this year via [Codequiry](https://codequiry.com/)), and arrange for a face-to-face meeting for a discussion and demo of your solution if needed.
+
+After submission deadline we will mark them all and provide you with the results.
+
+
+## Should I pass all the autograder tests?
+
+Well, if you want to have a chance to get full marks _yes_. 
+
+So, the short answer is that you should try to pass the test cases provided.
+
+If your solution does not meet those test cases, it is not exactly what we are looking for (it may still get some marks).  Even if your solution does meet every test case given, it still does not necessarily mean it is perfect, and we may run additional tests when we grade.
+
+We are aware that it can be a bit unforgiving to work with the automated test harness, but often your understanding of the underlying algorithms are greatly improved when you need to dig into particular corner cases, so it's time well spent. 
+
+------------------------------
+# GIT & GITHUB
 
 ## Git, GitHub, what is that?
 
@@ -129,52 +180,21 @@ See this as well:
 
 ![google-form](img/how-to-rename-tag.png)
 
-It used to be the case that GitHub web interface did not allow deleting tags (though you could create new tags); but post [@120](https://piazza.com/class/kbsmlzxg3k7418?cid=120) suggests that it is now possible to change a tag from the GitHub web interface!
+It used to be the case that GitHub web interface did not allow deleting tags (though you could create new tags); but it was [@120](https://piazza.com/class/kbsmlzxg3k7418?cid=120) suggests that it is now possible to change a tag from the GitHub web interface!
 
-## I submitted wrongly (e.g., didn't tag correctly) and is now after the due date, can you consider my submission?
+## Cannot clone or push to GitHub with my password credentials?
 
-We will not fix any submission and it is your responsibility to do it correctly.
+As [per August 12th, 2021 GitHub post](https://github.blog/changelog/2021-08-12-git-password-authentication-is-shutting-down/), GitHub is not no longer accepting account passwords when authenticating Git operations, like clonning private repos or pushing changes. You should use **token-based authentication**, such as  personal access, OAuth, SSH Key, or GitHub App installation token.
 
-However, the nice thing about git-based projects/assessments is that we can rely on commits. If you have submitted your tag incorrectly (did not tag it at all, tagged with different name or different capital letters), then please fix your submission by tagging the specific commit you want me to mark. I will use the timestamp of the commit itself, not of when it was tagged. This means that if the commit was done before the deadline, then all good!! Isn't this cool?
+So, if you were still using a password to authenticate your GitHub.com operations (something never recommended anyways if you are doing development), you must start using a [personal access token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token) by August 13, 2021 via HTTPS (recommended) or [SSH key](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh) to start using a personal access token to avoid disruption. 
 
-## Project specification says "You should code your implantation only at the locations ...." . Does this mean that we can't create our custom classes outside the provided functions?
+As explained [here](https://www.sobyte.net/post/2021-08/github-deprecates-passwords-for-git-operations/), tokens offer many advantages over password-based authentication: 
 
-Yes, you can create some help functions or classes, but **always** in the allowed files. Any other change in any other file will be totally ignored.
+* **Unique:** tokens are specific to GitHub and can be generated on a per-use or per-device basis.
+* **Revocable:** tokens can be individually revoked at any time without the need to update unaffected credentials.
+* **Limited:** tokens can be narrowed to allow only the access required by the use case.
+* **Random:** tokens are not subject to dictionary types or brute force attempts that might be made with simpler passwords that users need to remember or enter periodically.
 
-If you want to create custom classes and functions, you can also nest them inside the location where you read `***YOUR CODE HERE***`. See [this link](https://www.datacamp.com/community/tutorials/inner-classes-python) and [this link](https://www.programiz.com/python-programming/closure#:~:text=A%20function%20defined%20inside%20another,in%20order%20to%20modify%20them) for more info.
-
-## How do I zip files in folder X without including the folder X itself?
-
-Use the `-j` option, for example:
-
-```bash
-$ zip -r -j myAgent.zip project-2/MySolution/ 
-```
-
-However, this is OK if you don&rsquo;t need ANY folder at all in the zip, everything in the root. If you just don&rsquo;t want the root folder included but you do want all the folders after that to be included:
-
-```bash
-$ rm -f myAgent.zip ; cd project-2/MySolution; zip -r -j ../../myAgent.zip * ; cd ..
-```
-
-## The autograder says _"Your grades are NOT yet registered."_ What should I do to register?
-
-The autograder is some immediate **feedback** for you, but it is not the final grading we do as teaching staff.  
-
-So, while the automarker is a useful indication of your performance, it may not represent the ultimate mark. We reserve the right to run more tests, inspect your code and repo manually, run similarity software for integrity checks (this year via [Codequiry](https://codequiry.com/)), and arrange for a face-to-face meeting for a discussion and demo of your solution if needed.
-
-After submission deadline we will mark them all and provide you with the results.
-
-
-## Should I pass all the autograder tests?
-
-Well, if you want to have a chance to get full marks _yes_. 
-
-So, the short answer is that you should try to pass the test cases provided.
-
-If your solution does not meet those test cases, it is not exactly what we are looking for (it may still get some marks).  Even if your solution does meet every test case given, it still does not necessarily mean it is perfect, and we may run additional tests when we grade.
-
-We are aware that it can be a bit unforgiving to work with the automated test harness, but often your understanding of the underlying algorithms are greatly improved when you need to dig into particular corner cases, so it's time well spent. 
 
 
 ------------------------------
@@ -363,7 +383,7 @@ Thanks Banhao from AI'20!
 
 Use the `-q n` option for running just one question (e.g., `-q q3` to run Question 3 only) or `-t` to run only a specific test (e.g., `-t test_cases/q1/graph_bfs_vs_dfs`).
 
-# My a* search works but it takes too long, what's the best way to work out why it's taking so long/work out how to optimise it?
+## My X algorithm (e.g. A* search) works but it takes too long, what's the best way to work out why it's taking so long/work out how to optimise it?
 
 Fundamentally there are two ways of approaching this, empirically or theoretically.
 
