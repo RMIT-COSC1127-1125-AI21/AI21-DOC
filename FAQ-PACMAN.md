@@ -188,13 +188,18 @@ As [per August 12th, 2021 GitHub post](https://github.blog/changelog/2021-08-12-
 
 So, if you were still using a password to authenticate your GitHub.com operations (something never recommended anyways if you are doing development), you must start using a [personal access token](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token) by August 13, 2021 via HTTPS (recommended) or [SSH key](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh) to start using a personal access token to avoid disruption. 
 
+For example, you can set-up your remote as follows (after you generated your token in GitHub):
+
+```shell
+$ git remote set-url origin https://<token>@github.com/<username>/<repo>
+```
+
 As explained [here](https://www.sobyte.net/post/2021-08/github-deprecates-passwords-for-git-operations/), tokens offer many advantages over password-based authentication: 
 
 * **Unique:** tokens are specific to GitHub and can be generated on a per-use or per-device basis.
 * **Revocable:** tokens can be individually revoked at any time without the need to update unaffected credentials.
 * **Limited:** tokens can be narrowed to allow only the access required by the use case.
 * **Random:** tokens are not subject to dictionary types or brute force attempts that might be made with simpler passwords that users need to remember or enter periodically.
-
 
 
 ------------------------------
