@@ -37,6 +37,7 @@ As any FAQ page, this page is always "under construction". As we realize that so
   - [Cannot compile Metric-FF in MacOS](#cannot-compile-metric-ff-in-macos)
   - [One of the many tests is failing, how can I just run one question or even one particular test only?](#one-of-the-many-tests-is-failing-how-can-i-just-run-one-question-or-even-one-particular-test-only)
   - [My X algorithm (e.g. A* search) works but it takes too long, what's the best way to work out why it's taking so long/work out how to optimise it?](#my-x-algorithm-eg-a-search-works-but-it-takes-too-long-whats-the-best-way-to-work-out-why-its-taking-so-longwork-out-how-to-optimise-it)
+  - [How can I debug my system?](#how-can-i-debug-my-system)
 - [Project 1](#project-1)
   - [What actions should I return in the search algorithms?](#what-actions-should-i-return-in-the-search-algorithms)
   - [What counts as an expansion? I am getting too many expansions....](#what-counts-as-an-expansion-i-am-getting-too-many-expansions)
@@ -399,6 +400,9 @@ Theoretically, you can use your algorithms and analysis skills to try to figure 
 
 In general, before spending a lot of time doing experimental analysis, look at your implementation conceptually in a very, I repeat, _very_, critical way and perform the (theoretical) analysis of it. Think where the problem could be and whether you can suspect of something that is not well done. It's like being a detective, and good detectives are critical and meticulous!
 
+## How can I debug my system?
+
+While you may want to do some print outs here and there, eventually using a debugger is the way to go. Check [this video](https://www.youtube.com/watch?v=w8QHoVam1-I) for a quick guide to debugging python in VSCode (you can do similar things in PyCharm or other editors as well). This is far more flexible and reliable than print messages. :-)
 
 -----------------
 # Project 1
