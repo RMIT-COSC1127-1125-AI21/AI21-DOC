@@ -20,6 +20,7 @@ As any FAQ page, this page is always "under construction". As we realize that so
   - [How do I submit my project solution in my GIT repository?](#how-do-i-submit-my-project-solution-in-my-git-repository)
   - [How do I change the submission tag if I have already tagged one commit for submission?](#how-do-i-change-the-submission-tag-if-i-have-already-tagged-one-commit-for-submission)
   - [Cannot clone or push to GitHub with my password credentials?](#cannot-clone-or-push-to-github-with-my-password-credentials)
+  - [I have commited to the remote repo but I am not listed as a "contributor", why?](#i-have-commited-to-the-remote-repo-but-i-am-not-listed-as-a-contributor-why)
 - [PACMAN SETUP](#pacman-setup)
   - [What is the best way to develop my solutions for the Pacman project?](#what-is-the-best-way-to-develop-my-solutions-for-the-pacman-project)
   - [What version of Python should I use?](#what-version-of-python-should-i-use)
@@ -201,6 +202,16 @@ As explained [here](https://www.sobyte.net/post/2021-08/github-deprecates-passwo
 * **Revocable:** tokens can be individually revoked at any time without the need to update unaffected credentials.
 * **Limited:** tokens can be narrowed to allow only the access required by the use case.
 * **Random:** tokens are not subject to dictionary types or brute force attempts that might be made with simpler passwords that users need to remember or enter periodically.
+
+## I have commited to the remote repo but I am not listed as a "contributor", why?
+
+The two main reasons may be:
+
+1. Your commit is in a branch and has not yet made it to the default (master/main) branch, therefore you did not technically contribute (yet).
+2. Your local Git commit email isn't connected to your account; [connect it](https://docs.github.com/en/github/setting-up-and-managing-your-github-user-account/managing-email-preferences/setting-your-commit-email-address)!
+
+Read [this GitHub page](https://docs.github.com/en/github/setting-up-and-managing-your-github-profile/managing-contribution-graphs-on-your-profile/why-are-my-contributions-not-showing-up-on-my-profile#common-reasons-that-contributions-are-not-counted) to understand more about why your commit is not yet counting as contributions.
+
 
 
 ------------------------------
