@@ -1,10 +1,10 @@
 # FAQ - Pacman Projects - RMIT AI 2021
 
-This is a FAQ only for the project assessments (i.e., Pacman projects).
+This is a FAQ for the project assessments only (i.e., Pacman assessment projects).
 
 For general questions about the course, refer to the other FAQs available under [Resources](https://edstem.org/courses/6081/resources).
 
-As any FAQ page, this page is always "under construction". As we realize that some questions become common, we add them here.
+As any FAQ page, this page is always "under construction". As we realize that some questions become common, we add them here. So, bookmark it and check it regularly, particularly when you have a doubt and you suspect it may have been answered before!
 
 - [FAQ - Pacman Projects - RMIT AI 2021](#faq---pacman-projects---rmit-ai-2021)
 - [GENERAL](#general)
@@ -125,11 +125,13 @@ After submission deadline we will mark them all and provide you with the results
 
 Well, if you want to have a chance to get full marks _yes_. 
 
-So, the short answer is that you should try to pass the test cases provided.
+So, the short answer is that you should try to pass the test cases provided, yes.
 
-If your solution does not meet those test cases, it is not exactly what we are looking for (it may still get some marks).  Even if your solution does meet every test case given, it still does not necessarily mean it is perfect, and we may run additional tests when we grade.
+If your solution does not meet those test cases, it is *not* exactly what we are looking for (that is the bare minimum). Some test cases in the autograder may still give some partial marks. In fact, even if your solution does meet every test case given, it still does not necessarily mean it is perfect, and we may run additional tests when we actually grade the submission.
 
 We are aware that it can be a bit unforgiving to work with the automated test harness, but often your understanding of the underlying algorithms are greatly improved when you need to dig into particular corner cases, so it's time well spent. 
+
+As recognised by students, the autograder is indeed a fantatic feedback before submission for you. It is the minimum expected and you have it right from the start, so use it!
 
 ------------------------------
 # GIT & GITHUB
