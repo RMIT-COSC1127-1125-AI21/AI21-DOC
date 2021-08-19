@@ -49,6 +49,7 @@ As any FAQ page, this page is always "under construction". As we realize that so
 - [Project 2](#project-2)
   - [Inconsistent depth in minimax project 2, Q2 and careful use of `__init__`](#inconsistent-depth-in-minimax-project-2-q2-and-careful-use-of-__init__)
   - [Can we apply a "magic number" such as -9999 in our evaluation functions, as part of our logic not simply an arbitrary "return -9999"?](#can-we-apply-a-magic-number-such-as--9999-in-our-evaluation-functions-as-part-of-our-logic-not-simply-an-arbitrary-return--9999)
+  - [In Q4, what does it mean an adversary which chooses amongst their `getLegalActions` uniformly at random?](#in-q4-what-does-it-mean-an-adversary-which-chooses-amongst-their-getlegalactions-uniformly-at-random)
 - [Capture the Flag](#capture-the-flag)
   - [How to load my additional files beyond myTeam.py?](#how-to-load-my-additional-files-beyond-myteampy)
   - [Games go too fast! What should I do?](#games-go-too-fast-what-should-i-do)
@@ -618,6 +619,9 @@ More details about super can be found [here](https://stackoverflow.com/questions
 
 You would not be marked down for using a number like that - however if you really want a very large number, you might consider using `math.inf` instead, or even `float('inf')`.
 
+## In Q4, what does it mean an adversary which chooses amongst their `getLegalActions` uniformly at random?
+
+All it means is that the other players in the game are acting randomly, with no bias towards any action: all legal actions have the same chance of being executed. For example, if player 2 has three legal moves: left, down and up, then it will choose left with 33% chances, down with 33% chances and up with 33% chances.
 
 -----------------
 # Capture the Flag
