@@ -21,18 +21,19 @@ As any FAQ page, this page is always "under construction". As we realize that so
   - [How do I change the submission tag if I have already tagged one commit for submission?](#how-do-i-change-the-submission-tag-if-i-have-already-tagged-one-commit-for-submission)
   - [Cannot clone or push to GitHub with my password credentials?](#cannot-clone-or-push-to-github-with-my-password-credentials)
   - [I have commited to the remote repo but I am not listed as a "contributor", why?](#i-have-commited-to-the-remote-repo-but-i-am-not-listed-as-a-contributor-why)
-- [PACMAN SETUP](#pacman-setup)
-  - [What is the best way to develop my solutions for the Pacman project?](#what-is-the-best-way-to-develop-my-solutions-for-the-pacman-project)
+- [PYTHON](#python)
   - [What version of Python should I use?](#what-version-of-python-should-i-use)
   - [How do I run Python 3.6 in `coreteachingXX.csit.rmit.edu.au`??](#how-do-i-run-python-36-in-coreteachingxxcsitrmiteduau)
+  - [How do I know the type of a variable in Python?](#how-do-i-know-the-type-of-a-variable-in-python)
+  - [AttributeError: module 'importlib' has no attribute 'util'](#attributeerror-module-importlib-has-no-attribute-util)
+- [GENERAL PACMAN](#general-pacman)
+  - [What is the best way to develop my solutions for the Pacman project?](#what-is-the-best-way-to-develop-my-solutions-for-the-pacman-project)
   - [How to run Pacman remotely from `coreteaching`?](#how-to-run-pacman-remotely-from-coreteaching)
   - [Coreteaching? What is that?](#coreteaching-what-is-that)
   - [How do I setup a system in Windows with Python 3.6?](#how-do-i-setup-a-system-in-windows-with-python-36)
-- [TROUBLESHOOTING](#troubleshooting)
   - [Can I use `problem._visited`?](#can-i-use-problem_visited)
   - [I get "`_tkinter.TclError: no display name and no $DISPLAY environment variable`" error when running in WSL or ssh](#i-get-_tkintertclerror-no-display-name-and-no-display-environment-variable-error-when-running-in-wsl-or-ssh)
   - [Cannot run Pacman due to problems with Tkinter: "`ImportError: No module named Tkinter`"](#cannot-run-pacman-due-to-problems-with-tkinter-importerror-no-module-named-tkinter)
-  - [How do I know the type of a variable in Python?](#how-do-i-know-the-type-of-a-variable-in-python)
   - [Error module 'cgi' has no attribute 'escape' when running autograder.pt](#error-module-cgi-has-no-attribute-escape-when-running-autograderpt)
   - [Can't fit the Pacman window in my screen, can I resize it?](#cant-fit-the-pacman-window-in-my-screen-can-i-resize-it)
   - [Cannot compile Metric-FF in MacOS](#cannot-compile-metric-ff-in-macos)
@@ -216,15 +217,8 @@ The two main reasons may be:
 Read [this GitHub page](https://docs.github.com/en/github/setting-up-and-managing-your-github-profile/managing-contribution-graphs-on-your-profile/why-are-my-contributions-not-showing-up-on-my-profile#common-reasons-that-contributions-are-not-counted) to understand more about why your commit is not yet counting as contributions.
 
 
-
 ------------------------------
-# PACMAN SETUP
-
-## What is the best way to develop my solutions for the Pacman project?
-
-We highly recommend developing your solutions in your local machine (e.g., your laptop). Even more, if you are running Linux locally, 99.99% sure your code will ran in another Linux install. If you are using Windows, you may want to consider installing a Linux virtual machine with Virtualbox.
-
-Running it locally will make the development much faster. I also strongly suggest using a version control system, like git or mercurial. This is best practice and should be something normal at this stage of the program. Remember though NOT to make your solutions public and this will violate the course plagiarism code AND also break the will of the creators of this wonderful project. SO if you use bitbucket for example, make sure your repository is private.
+# PYTHON
 
 ## What version of Python should I use?
 
@@ -296,6 +290,41 @@ Python 3.6.9 (default, Sep 11 2019, 16:40:19)
 Type "help", "copyright", "credits" or "license" for more information.
 ```
 
+## How do I know the type of a variable in Python?
+
+Check this video to know how to print the type of a variable in Python:
+
+[![Alt text](https://img.youtube.com/vi/iROZLaQGy4s/0.jpg)](https://www.youtube.com/watch?v=iROZLaQGy4s)
+
+## AttributeError: module 'importlib' has no attribute 'util'
+
+Some students reported that running `python capture.py` gives them the following errors:
+
+```shell
+Traceback (most recent call last):
+  File "capture.py", line 1127, in <module>
+    options = readCommand( sys.argv[1:] ) # Get game components based on input
+  File "capture.py", line 902, in readCommand
+    redAgents = loadAgents(True, options.red, nokeyboard, redArgs)
+  File "capture.py", line 978, in loadAgents
+    spec = importlib.util.spec_from_loader(moduleName, loader)
+AttributeError: module 'importlib' has no attribute 'util'
+```
+
+Changing `import importlib` with `import importlib.util` seems to fix the problem.
+
+We are still investigating this issue as it seems to work well in our set-up. [Here](import importlib) is a post on this issue.
+
+------------------------------
+# GENERAL PACMAN
+
+## What is the best way to develop my solutions for the Pacman project?
+
+We highly recommend developing your solutions in your local machine (e.g., your laptop). Even more, if you are running Linux locally, 99.99% sure your code will ran in another Linux install. If you are using Windows, you may want to consider installing a Linux virtual machine with Virtualbox.
+
+Running it locally will make the development much faster. I also strongly suggest using a version control system, like git or mercurial. This is best practice and should be something normal at this stage of the program. Remember though NOT to make your solutions public and this will violate the course plagiarism code AND also break the will of the creators of this wonderful project. SO if you use bitbucket for example, make sure your repository is private.
+
+
 ## How to run Pacman remotely from `coreteaching`?
 
 If you do not care about the graphics (e.g., for grading), then try using `--textGraphics` or even `--quietTextGraphics`. In most cases you will use `coreteaching` machines just to test that the autograder works well. The autograder does not need any graphical interface so it should work properly.
@@ -310,8 +339,6 @@ If you use Windows, then you need an X server running and set your ssh client (e
 
 [![Alt text](https://img.youtube.com/vi/vwZXhTykSis/0.jpg)](https://www.youtube.com/watch?v=vwZXhTykSis)
 
-
-
 Said so, for development, we strongly suggest to clone your repo locally on your machine and work there (e.g., using PyCharm, Visual Code Studio, or even ECLIPSE).
 
 ## Coreteaching? What is that?
@@ -323,10 +350,6 @@ Check [this FAQ](https://docs.google.com/document/d/12CS_7OdEmpQZiwuxDTc9PHfHan4
 Although we will assume you are able to install and get Python running in your machine, there are plenty of videos on that on the web. For example: 
 
 [![Alt text](https://img.youtube.com/vi/oHOiqFs_x8Y/0.jpg)](https://www.youtube.com/watch?v=oHOiqFs_x8Y)
-
-
-------------------------------
-# TROUBLESHOOTING
 
 ## Can I use `problem._visited`?
 
@@ -372,12 +395,6 @@ Type "help", "copyright", "credits" or "license" for more information.
 [e62439@foo~]$ 
 ```
 
-## How do I know the type of a variable in Python?
-
-Check this video to know how to print the type of a variable in Python:
-
-[![Alt text](https://img.youtube.com/vi/iROZLaQGy4s/0.jpg)](https://www.youtube.com/watch?v=iROZLaQGy4s)
-
 ## Error module 'cgi' has no attribute 'escape' when running autograder.pt
 
 You are probably not using Python 3.6 but a higher version. Check [this post](https://piazza.com/class/kbsmlzxg3k7418?cid=28).
@@ -385,6 +402,7 @@ You are probably not using Python 3.6 but a higher version. Check [this post](ht
 ## Can't fit the Pacman window in my screen, can I resize it?
 
 The Pacman windows cannot be resized once open. However, you can use the option `-z <float>` (or `--zoom <float>`) to scale the window. For example, using `-z 0.5` will scale down the window by half. Using this option you should be able to fit the entire window in the screen.
+
 ## Cannot compile Metric-FF in MacOS
 
 Some Mac users have reported this error when compiling [Metric-FF](https://fai.cs.uni-saarland.de/hoffmann/metric-ff.html) planner:
