@@ -20,7 +20,8 @@ As any FAQ page, this page is always "under construction". As we realize that so
   - [How do I submit my project solution in my GIT repository?](#how-do-i-submit-my-project-solution-in-my-git-repository)
   - [How do I change the submission tag if I have already tagged one commit for submission?](#how-do-i-change-the-submission-tag-if-i-have-already-tagged-one-commit-for-submission)
   - [Cannot clone or push to GitHub with my password credentials?](#cannot-clone-or-push-to-github-with-my-password-credentials)
-  - [I have commited to the remote repo but I am not listed as a "contributor", why?](#i-have-commited-to-the-remote-repo-but-i-am-not-listed-as-a-contributor-why)
+  - [I have committed to the remote repo but I am not listed as a "contributor", why?](#i-have-committed-to-the-remote-repo-but-i-am-not-listed-as-a-contributor-why)
+  - [Commits not correctly associated to my GitHub account, why?](#commits-not-correctly-associated-to-my-github-account-why)
 - [PYTHON](#python)
   - [What version of Python should I use?](#what-version-of-python-should-i-use)
   - [How do I run Python 3.6 in `coreteachingXX.csit.rmit.edu.au`??](#how-do-i-run-python-36-in-coreteachingxxcsitrmiteduau)
@@ -207,7 +208,7 @@ As explained [here](https://www.sobyte.net/post/2021-08/github-deprecates-passwo
 * **Limited:** tokens can be narrowed to allow only the access required by the use case.
 * **Random:** tokens are not subject to dictionary types or brute force attempts that might be made with simpler passwords that users need to remember or enter periodically.
 
-## I have commited to the remote repo but I am not listed as a "contributor", why?
+## I have committed to the remote repo but I am not listed as a "contributor", why?
 
 The two main reasons may be:
 
@@ -216,6 +217,10 @@ The two main reasons may be:
 
 Read [this GitHub page](https://docs.github.com/en/github/setting-up-and-managing-your-github-profile/managing-contribution-graphs-on-your-profile/why-are-my-contributions-not-showing-up-on-my-profile#common-reasons-that-contributions-are-not-counted) to understand more about why your commit is not yet counting as contributions.
 
+
+## Commits not correctly associated to my GitHub account, why?
+
+Please [check this](https://docs.github.com/en/github/committing-changes-to-your-project/troubleshooting-commits/why-are-my-commits-linked-to-the-wrong-user) and fix it so we can know the commit was *yous*. Otherwise we may get your contributions wrong and risk getting lower marks or delaying your marking.
 
 ------------------------------
 # PYTHON
