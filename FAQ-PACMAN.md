@@ -54,6 +54,7 @@ As any FAQ page, this page is always "under construction". As we realize that so
   - [In Q4, what does it mean an adversary which chooses amongst their `getLegalActions` uniformly at random?](#in-q4-what-does-it-mean-an-adversary-which-chooses-amongst-their-getlegalactions-uniformly-at-random)
 - [Capture the Flag](#capture-the-flag)
   - [How to load my additional files beyond myTeam.py?](#how-to-load-my-additional-files-beyond-myteampy)
+  - [Can I assume a certain size of the map?](#can-i-assume-a-certain-size-of-the-map)
   - [Games go too fast! What should I do?](#games-go-too-fast-what-should-i-do)
   - [How do I replay a game?](#how-do-i-replay-a-game)
   - [How does one check if a given agent is currently scared? Is the only option to check the number of capsules in previous states?](#how-does-one-check-if-a-given-agent-is-currently-scared-is-the-only-option-to-check-the-number-of-capsules-in-previous-states)
@@ -665,6 +666,28 @@ import abc
 
 If you do not append that to the sys path, your `abc.py` module will not be found and your agent will crash.
 
+## Can I assume a certain size of the map?
+
+The short answer is _yes_, you can assume that all of the boards in the competition have the same dimensions.
+
+Said so, note the general ovearching idea of the project is to make an AI system that is NOT tailored to special cases, but general to tackle different situations, even ones not ever seen.
+
+Of course, in the context of map size, we can think of a continuum of agents, from most specific to most general, as follows:
+
+1. Can play pacman capture the flag (hereafter referred to simply as pacman) on one specific map, with one specific starting condition.
+2. Can play pacman on one specific map, as either team.
+3. Can play pacman on a range of maps all of the same size.
+4. Can play pacman on a range of maps with differing sizes.
+5. Can play pacman on a range of maps and with varying configurations (e.g. changing numbers of agents, or splitting map top/bottom instead of left/right).
+6. Can play a range of different games involving moving around on a square grid.
+7. Can play any game ever made.
+8. Can perform any task requiring intelligence.
+
+When we say "a good AI is general", we re not talking about cases 7 or 8 (although if your system can do that, then you will likely get both good marks and a Turing award)! For this project, we are really aiming for the **range of 3-4**. For some AI techniques, like planning, it is likely that if your agent can do 3 well, it can probably also do 4 reasonably well. For others, like deep RL, having an agent that is capable of handling 4 instead of 3 may be substantially more challenging.
+
+There is a delicate balance to walk in terms of how specific vs how general your agent should be. Our advice is that _whenever reasonable_, you should aim to handle arbitrary sized boards (e.g. to figure out where the boundary is, divide the width of the board by 2, don't hard code in a particular number). **Certainly hard coding in strategies for a specific board is not appropriate**. However if your agent can play on any sized board but is just not as good at arbitrary boards as it is on the competition sized ones, then I wouldn't worry too much.
+
+If in doubt whether the assumption you are considered is reasonable or not, please attend the drop-in lab sessions to discuss, they are exactly for that!
 
 ## Games go too fast! What should I do?
 
