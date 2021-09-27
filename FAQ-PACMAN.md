@@ -72,6 +72,7 @@ As any FAQ page, this page is always "under construction". As we realize that so
   - [Can I override the `X` (e.g., `makeObservation()`) method of `CaptureAgent`?](#can-i-override-the-x-eg-makeobservation-method-of-captureagent)
   - [How to simulate opponent in MCTS?](#how-to-simulate-opponent-in-mcts)
   - [The option `--numTraining` (or `-x`) option does not work, why?](#the-option---numtraining-or--x-option-does-not-work-why)
+  - [Can I perform training during the contest (in agent.final(gameState))?](#can-i-perform-training-during-the-contest-in-agentfinalgamestate)
 
 -------------------------
 
@@ -1008,3 +1009,15 @@ If you set `--numTraining` to be greater or equal to `--numGames`, your code wil
 ```
 
 This is not a big problem, as it is after all your games have run and training has already occurred. However, if it bothers you (and it should bother you! ;-) ), you can comment out line 1116 in `capture.py` to fix it: `(save_score(games[0]))`.
+
+
+## Can I perform training during the contest (in `agent.final(gameState)`)?
+
+I will break this down into two parts:
+
+Can we put some code in `agent.final(gameState)` to implement learning or logging or something else? Technically yes, that is allowed, but see point 2 for some serious limitations. Also be very careful that it does not take excessively long. Anything **beyond 10 seconds is definitely too long** - if you think this is going to be a problem feel free to discuss your particular use case with me directly in a private post or in a python lab/consultation time.
+
+Is learning after a game going to help my agents in the competition? Here unfortunately the answer is no. In order to handle the large volume of games that are being played, the contest infrastructure generates all the jobs (i.e. pacman games such as team1 vs team2 on map 3) and then distributes them independently to a range of servers in a cluster. This means that each of your games is running in parallel, with no knowledge of the games that have come before it. Any learning that you perform during the contest is therefore constrained to that game alone.
+
+
+
