@@ -319,7 +319,8 @@ AttributeError: module 'importlib' has no attribute 'util'
 
 Changing `import importlib` with `import importlib.util` seems to fix the problem.
 
-We are still investigating this issue as it seems to work well in our set-up. [Here](import importlib) is a post on this issue.
+We are still investigating this issue as it seems to work well in our set-up. This seems to be related to the fact that ["importing a package does not automatically load its submodules"](https://stackoverflow.com/questions/65028261/attributeerror-module-importlib-has-no-attribute-util-ii) but we are unclear why sometimes it does work!
+
 
 ------------------------------
 # GENERAL PACMAN
