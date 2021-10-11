@@ -684,8 +684,8 @@ with open(os.path.join(cd, data_agent.json)) as f:
 
 One way is that you print the version number of your system right at the start of your agent and then you just check the log:
 
-```shell
-VERSION = 1.0
+```python
+VERSION = 1.0   # set the version number of your current system
 
 ...
 
