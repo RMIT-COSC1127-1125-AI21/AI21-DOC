@@ -53,7 +53,8 @@ As any FAQ page, this page is always "under construction". As we realize that so
   - [Can we apply a "magic number" such as -9999 in our evaluation functions, as part of our logic not simply an arbitrary "return -9999"?](#can-we-apply-a-magic-number-such-as--9999-in-our-evaluation-functions-as-part-of-our-logic-not-simply-an-arbitrary-return--9999)
   - [In Q4, what does it mean an adversary which chooses amongst their `getLegalActions` uniformly at random?](#in-q4-what-does-it-mean-an-adversary-which-chooses-amongst-their-getlegalactions-uniformly-at-random)
 - [Capture the Flag](#capture-the-flag)
-  - [How to load my additional files beyond myTeam.py?](#how-to-load-my-additional-files-beyond-myteampy)
+  - [How to import/load my additional files beyond myTeam.py?](#how-to-importload-my-additional-files-beyond-myteampy)
+  - [How do I know what version of my team has played?](#how-do-i-know-what-version-of-my-team-has-played)
   - [Can I assume a certain size of the map?](#can-i-assume-a-certain-size-of-the-map)
   - [Games go too fast! What should I do?](#games-go-too-fast-what-should-i-do)
   - [How do I replay a game?](#how-do-i-replay-a-game)
@@ -72,7 +73,7 @@ As any FAQ page, this page is always "under construction". As we realize that so
   - [Can I override the `X` (e.g., `makeObservation()`) method of `CaptureAgent`?](#can-i-override-the-x-eg-makeobservation-method-of-captureagent)
   - [How to simulate opponent in MCTS?](#how-to-simulate-opponent-in-mcts)
   - [The option `--numTraining` (or `-x`) option does not work, why?](#the-option---numtraining-or--x-option-does-not-work-why)
-  - [Can I perform training during the contest (in agent.final(gameState))?](#can-i-perform-training-during-the-contest-in-agentfinalgamestate)
+  - [Can I perform training during the contest (in `agent.final(gameState)`)?](#can-i-perform-training-during-the-contest-in-agentfinalgamestate)
 
 -------------------------
 
@@ -651,7 +652,7 @@ All it means is that the other players in the game are acting randomly, with no 
 -----------------
 # Capture the Flag
 
-## How to load my additional files beyond myTeam.py?
+## How to import/load my additional files beyond myTeam.py?
 
 You may have coded supported files that you will import in your `myTeam.py`, for example a module  `abc.py`. In order for the contest script to find it you need to do it this way:
 
@@ -665,9 +666,33 @@ sys.path.append(cd)
 import abc 
 ```
 
-This will add the folder where your system is to Python [`sys.path`](https://docs.python.org/3/library/sys.html#sys.path)
+The `cd` variable will contain the absolute path to the folder where your agent is located.
 
-If you do not append that to the sys path, your `abc.py` module will not be found and your agent will crash.
+This will add the folder where your system is to Python [`sys.path`](https://docs.python.org/3/library/sys.html#sys.path) that contains the directories where Python will look for modules when importing. By doing so, you are telling Python to also look at the folder where your agent is located; otherwise it will not find it and your agent will just crash when importing.
+
+Also, make sure the module you import has a very unique name. Do not call it `qlearning.py` as it may clash with other files. If anything, use your team name as suffix, e.g., `qlearning_myteam.py`.
+
+You should be able to also use variable `cd` to access other auxiliarly files you may bundle with your agent system. For example:
+
+```python
+with open(os.path.join(cd, data_agent.json)) as f:
+  ....
+```
+
+
+## How do I know what version of my team has played?
+
+One way is that you print the version number of your system right at the start of your agent and then you just check the log:
+
+```shell
+VERSION = 1.0
+
+...
+
+print("Team XYZ: ", VERSION)
+```
+
+Make sure you change constant `VERSION` when you update your agent.
 
 ## Can I assume a certain size of the map?
 
