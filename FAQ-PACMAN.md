@@ -665,6 +665,8 @@ sys.path.append(cd)
 import abc 
 ```
 
+This will add the folder where your system is to Python [`sys.path`](https://docs.python.org/3/library/sys.html#sys.path)
+
 If you do not append that to the sys path, your `abc.py` module will not be found and your agent will crash.
 
 ## Can I assume a certain size of the map?
