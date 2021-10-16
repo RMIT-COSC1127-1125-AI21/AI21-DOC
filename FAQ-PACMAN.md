@@ -774,7 +774,7 @@ Some have reported that by clicking and slightly moving the window stops the gam
 
 We will provide some AI tools out-of-the-shelf for you to use if you want. These binaries will be available in the `PATH` so you can assume they will just run.
 
-For example, we will provide the [FF](https://fai.cs.uni-saarland.de/hoffmann/ff.html) and [Metric-FF](https://fai.cs.uni-saarland.de/hoffmann/metric-ff.html) planners. You can call them directly via `ff`, and  `mff1`, `mff2` or `mff2.1` (depending on the version). 
+For example, we will provide the [FF](https://fai.cs.uni-saarland.de/hoffmann/ff.html) and [Metric-FF](https://fai.cs.uni-saarland.de/hoffmann/metric-ff.html) planners. You can call them directly via `ff` and  `mff`. 
 
 Basically, if you have `problem.pddl` and want to write the plan into `solution.txt` you can do:
 
